@@ -9,8 +9,15 @@ public abstract class Person {
     }
 
     public static void showPersonType() {
-        System.out.println("Person.showPersonType()");
+
+        System.out.println(
+                "Person.showPersonType()"
+        );
     }
 
     public abstract void showInfo();
+
+    public abstract void activate();
+
+    public abstract String getRole();
 }
