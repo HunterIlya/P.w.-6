@@ -17,10 +17,24 @@ public class Book extends LibraryItem {
     public void getItemInfo() {
 
         System.out.println(
-                "Book.getItemInfo(): "
+                "Book: "
                         + title
                         + ", author="
                         + author
+        );
+    }
+
+    @Override
+    public String getItemType() {
+
+        return "Book";
+    }
+
+    @Override
+    public void open() {
+
+        System.out.println(
+                "Opening printed book"
         );
     }
 }
