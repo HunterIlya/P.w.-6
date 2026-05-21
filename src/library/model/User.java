@@ -2,21 +2,12 @@ package library.model;
 
 public class User extends Person {
 
-    public static class NameInfo {
-
-        public String firstName;
-        public String lastName;
-    }
-
     private boolean active;
 
     public User(String name) {
+
         super(name);
         this.active = false;
-    }
-
-    public void activateAccount() {
-        active = true;
     }
 
     @Override
@@ -28,5 +19,21 @@ public class User extends Person {
                         + ", active="
                         + active
         );
+    }
+
+    @Override
+    public void activate() {
+
+        active = true;
+
+        System.out.println(
+                "User activated"
+        );
+    }
+
+    @Override
+    public String getRole() {
+
+        return "User";
     }
 }
