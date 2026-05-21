@@ -5,6 +5,7 @@ public abstract class LibraryItem {
     protected String title;
 
     public LibraryItem(String title) {
+
         this.title = title;
     }
 
@@ -16,4 +17,8 @@ public abstract class LibraryItem {
     }
 
     public abstract void getItemInfo();
+
+    public abstract String getItemType();
+
+    public abstract void open();
 }
