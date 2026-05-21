@@ -18,9 +18,24 @@ public class ElectronicResource
     public void getItemInfo() {
 
         System.out.println(
-                "ElectronicResource.getItemInfo(): "
+                "Electronic resource: "
                         + title
                         + ", url="
+                        + url
+        );
+    }
+
+    @Override
+    public String getItemType() {
+
+        return "ElectronicResource";
+    }
+
+    @Override
+    public void open() {
+
+        System.out.println(
+                "Opening website: "
                         + url
         );
     }
