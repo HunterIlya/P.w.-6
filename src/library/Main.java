@@ -1,7 +1,6 @@
 package library;
 
 import library.model.*;
-import library.service.*;
 
 public class Main {
 
@@ -9,56 +8,50 @@ public class Main {
             String[] args
     ) {
 
-        Person.showPersonType();
+        Person user =
+                new User("Ivan");
 
-        LibraryItem.showItemCategory();
+        Person librarian =
+                new Librarian("Anna");
 
-        Author.showAuthorInfo();
+        user.activate();
+        librarian.activate();
 
-        User user =
-                ObjectFactory.createUser(
-                        "Ivan"
-                );
+        user.showInfo();
+        librarian.showInfo();
 
-        user.activateAccount();
-
-        Author author =
-                new Author(
-                        "George Orwell"
-                );
-
-        Book book =
-                ObjectFactory.createBook(
-                        "1984",
-                        author
-                );
-
-        ElectronicResource resource =
-                ObjectFactory
-                        .createElectronicResource(
-                                "Java Guide",
-                                "https://example.com"
-                        );
-
-        Storage.users.add(user);
-
-        Storage.items.add(book);
-
-        Storage.items.add(resource);
-
-        for (
-                LibraryItem item
-                : Storage.items
-        ) {
-
-            item.getItemInfo();
-        }
-
-        BookIssue.issueBook(
-                user,
-                book
+        System.out.println(
+                user.getRole()
         );
 
-        Storage.showStorageState();
+        System.out.println(
+                librarian.getRole()
+        );
+
+        LibraryItem book =
+                new Book(
+                        "1984",
+                        new Author("George Orwell")
+                );
+
+        LibraryItem resource =
+                new ElectronicResource(
+                        "Java Guide",
+                        "https://example.com"
+                );
+
+        book.getItemInfo();
+        resource.getItemInfo();
+
+        book.open();
+        resource.open();
+
+        System.out.println(
+                book.getItemType()
+        );
+
+        System.out.println(
+                resource.getItemType()
+        );
     }
 }
