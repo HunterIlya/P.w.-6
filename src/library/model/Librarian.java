@@ -3,6 +3,7 @@ package library.model;
 public class Librarian extends Person {
 
     public Librarian(String name) {
+
         super(name);
     }
 
@@ -13,5 +14,19 @@ public class Librarian extends Person {
                 "Librarian.showInfo(): "
                         + name
         );
+    }
+
+    @Override
+    public void activate() {
+
+        System.out.println(
+                "Librarian activated"
+        );
+    }
+
+    @Override
+    public String getRole() {
+
+        return "Librarian";
     }
 }
